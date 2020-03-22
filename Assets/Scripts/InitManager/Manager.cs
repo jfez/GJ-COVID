@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
+    public static int levelIndex;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelIndex = 2;
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class Manager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Load");
     }
     
     public void ExitGame()

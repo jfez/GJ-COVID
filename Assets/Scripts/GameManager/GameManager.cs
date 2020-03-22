@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -10,8 +12,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         pause = false;
         pauseCanvas.SetActive (false);
+        Manager.levelIndex++;
     }
 
     // Update is called once per frame
@@ -20,7 +24,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
-        }
+        }       
     }
 
     void Pause ()
@@ -40,6 +44,17 @@ public class GameManager : MonoBehaviour
 
             pause = true;
         }
-    }    
+    }
+    
+    public void Restart()
+    {
+        Manager.levelIndex--;
+        SceneManager.LoadScene("Load");
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Init");
+    }
 
 }
