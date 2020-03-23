@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviour
 {
+    private int numScenes;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        numScenes = 5;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class LoadNextLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Manager.levelIndex > 4)
+            if (Manager.levelIndex > numScenes)
             {
                 SceneManager.LoadScene("Init");
             }

@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelIndex = 2;
+        levelIndex = 3;
     }
 
     // Update is called once per frame
@@ -23,7 +23,12 @@ public class Manager : MonoBehaviour
     {
         SceneManager.LoadScene("Load");
     }
-    
+
+    public void GoCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
